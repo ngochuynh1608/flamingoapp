@@ -1,10 +1,10 @@
 {
-  "name": "moodlemobile",
+  "name": "flamingomobile",
   "version": "4.1.0-dev",
-  "description": "The official app for Moodle.",
+  "description": "The official app for E-learning Flamingo.",
   "author": {
-    "name": "Moodle Pty Ltd.",
-    "email": "mobile@moodle.com"
+    "name": "IONSITE Pty Ltd.",
+    "email": "info@bitlearn.vn"
   },
   "repository": {
     "type": "git",
@@ -47,6 +47,7 @@
     "@angular/platform-browser": "~10.0.14",
     "@angular/platform-browser-dynamic": "~10.0.14",
     "@angular/router": "~10.0.14",
+    "@capacitor/core": "5.0.5",
     "@ionic-native/badge": "^5.36.0",
     "@ionic-native/camera": "^5.36.0",
     "@ionic-native/chooser": "^5.36.0",
@@ -90,9 +91,9 @@
     "@types/dom-mediacapture-record": "^1.0.7",
     "chart.js": "^2.9.4",
     "cordova": "^11.0.0",
-    "cordova-android": "^10.1.1",
+    "cordova-android": "10.1.2",
     "cordova-clipboard": "^1.3.0",
-    "cordova-ios": "^6.2.0",
+    "cordova-ios": "6.3.0",
     "cordova-plugin-add-swift-support": "^2.0.2",
     "cordova-plugin-advanced-http": "^3.3.1",
     "cordova-plugin-badge": "^0.8.8",
@@ -235,7 +236,8 @@
       "cordova-sqlite-storage": {},
       "@moodlehq/phonegap-plugin-push": {
         "ANDROIDX_CORE_VERSION": "1.6.+",
-        "FCM_VERSION": "23.+"
+        "FCM_VERSION": "23.+",
+        "IOS_FIREBASE_MESSAGING_VERSION": "~> 8.1.1"
       },
       "@moodlehq/cordova-plugin-intent": {},
       "nl.kingsquare.cordova.background-audio": {},

@@ -67,18 +67,6 @@
                             </a></p>
                     </ion-label>
                 </ion-item>
-                <ion-item class="ion-text-wrap" *ngIf="user.city && !formattedAddress">
-                    <ion-label>
-                        <h2>{{ 'core.user.city' | translate}}</h2>
-                        <p>{{ user.city }}</p>
-                    </ion-label>
-                </ion-item>
-                <ion-item class="ion-text-wrap" *ngIf="user.country && !formattedAddress">
-                    <ion-label>
-                        <h2>{{ 'core.user.country' | translate}}</h2>
-                        <p>{{ user.country }}</p>
-                    </ion-label>
-                </ion-item>
             </ion-item-group>
             <ion-item-group *ngIf="hasDetails">
                 <ion-item-divider>

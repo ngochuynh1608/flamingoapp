@@ -6,7 +6,7 @@
         <core-user-menu-button *ngIf="loaded && tabsPlacement == 'side'" [alwaysShow]="true"></core-user-menu-button>
 
         <ion-tab-button *ngFor="let tab of tabs" (keydown)="tabAction.keyDown(tab.page, $event)" (keyup)="tabAction.keyUp(tab.page, $event)"
-            [hidden]="!loaded && tab.hide" [tab]="tab.page" [disabled]="tab.hide" layout="label-hide" class="{{tab.class}}"
+            [hidden]="!loaded && tab.hide" [tab]="tab.page" [disabled]="tab.hide" layout="label-hidden" class="{{tab.class}}"
             [selected]="tab.page === selectedTab" [tabindex]="selectedTab == tab.page ? 0 : -1" [attr.aria-controls]="tab.id">
             <ion-icon class="core-tab-icon" [name]="tab.icon" aria-hidden="true"></ion-icon>
             <ion-label aria-hidden="true">{{ tab.title | translate }}</ion-label>

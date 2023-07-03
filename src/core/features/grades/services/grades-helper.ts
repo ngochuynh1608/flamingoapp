@@ -110,7 +110,7 @@ export class CoreGradesHelperProvider {
                 rowspan: tableRow.leader?.rowspan,
             };
 
-            this.setRowStyleClasses(row, (tableRow.leader as CoreGradesTableLeaderColumn).class);
+            this.setRowEvenOddClass(row, (tableRow.leader as CoreGradesTableLeaderColumn).class);
 
             return row;
         }
@@ -132,7 +132,7 @@ export class CoreGradesHelperProvider {
                 row.rowspan = tableRow.leader?.rowspan || 1;
 
                 this.setRowIconAndType(row, content);
-                this.setRowStyleClasses(row, itemNameColumn.class);
+                this.setRowEvenOddClass(row, itemNameColumn.class);
                 row.rowclass += itemNameColumn.class.indexOf('hidden') >= 0 ? ' hidden' : '';
                 row.rowclass += itemNameColumn.class.indexOf('dimmed_text') >= 0 ? ' dimmed_text' : '';
 
@@ -625,19 +625,15 @@ export class CoreGradesHelperProvider {
     }
 
     /**
-     * Set row style classes.
+     * Set 'odd' or 'even' classes into a row.
      *
      * @param row Row.
-     * @param classes Unformatted classes.
+     * @param classes Existing row classes.
      */
-    protected setRowStyleClasses(row: CoreGradesFormattedTableRow, classes: string): void {
+    protected setRowEvenOddClass(row: CoreGradesFormattedTableRow, classes: string): void {
         const level = parseInt(classes.match(/(?:^|\s)level(\d+)(?:$|\s)/)?.[1] ?? '0');
 
         row.rowclass = `${row.rowclass ?? ''} ${level % 2 === 0 ? 'even' : 'odd'}`.trim();
-
-        if (classes.match(/(^|\s)(category|bagg(b|t))($|\s)/)) {
-            row.rowclass += ' core-bold';
-        }
     }
 
     /**

@@ -152,9 +152,6 @@ export class CoreRemindersSetReminderMenuComponent implements OnInit {
      * @param ev Click event.
      */
     async setCustom(ev: Event): Promise<void> {
-        ev.stopPropagation();
-        ev.preventDefault();
-
         const reminderTime = await CoreDomUtils.openPopover<CoreReminderValueAndUnit>({
             component: CoreRemindersSetReminderCustomComponent,
             componentProps: {
@@ -162,6 +159,7 @@ export class CoreRemindersSetReminderMenuComponent implements OnInit {
                 customUnits: this.customUnits,
             },
             waitForDismissCompleted: true, // To be able to close parent popup.
+            event: ev,
         });
 
         if (reminderTime === undefined) {
